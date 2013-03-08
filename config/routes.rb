@@ -1,4 +1,20 @@
 Codetada::Application.routes.draw do
+  devise_for :users
+
+  get "tasks/index"
+
+  get "tasks/new"
+
+  get "tasks/show"
+
+  get "tasks/edit"
+
+  get "tasks/create"
+
+  get "tasks/update"
+
+  get "tasks/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
