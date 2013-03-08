@@ -1,17 +1,17 @@
 <h1>TO DO List</h1>
-<% if @tasks.count == 0 %>
-<p>Currently you do not have any tasks, create a <%= link_to "New Task", tasks_new_path %></p>
+<% if @task.count == 0 %>
+<p>Currently you do not have any tasks, create a <%= link_to "New Task", new_task_path %></p>
 <% else %>
 <ul>
-	<% @tasks.each do |t| %>
+	<% @task.each do |t| %>
 	<li>
 	<h2><%= t.title %></h2>
-	<p><%= t.content %></p>
+	<p><%= t.content %> - <%= link_to "Delete", "/tasks/#{t.id}", :method => 'DELETE' %> | <%= link_to "Edit", "/tasks/#{t.id}/edit" %></p>
 	</li>
 	<% end %>
 <% end %>
 </ul>
-<%= link_to "Create new Task", tasks_new_path %>
+<%= link_to "Create new Task", new_task_path %>
 
 	
 
