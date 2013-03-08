@@ -1,9 +1,22 @@
-<h1>Tasks#show</h1>
-<% @tasks.each do |t| %>
-<li>
-<h2><%= t.title %></h2>
-<p><%= t.content %></p>
-</li>
+<h1>TO DO List</h1>
+<% if @tasks.count == 0 %>
+<p>Currently you do not have any tasks, create a <%= link_to "New Task", tasks_new_path %></p>
+<% else %>
+<ul>
+	<% @tasks.each do |t| %>
+	<li>
+	<h2><%= t.title %></h2>
+	<p><%= t.content %></p>
+	</li>
+	<% end %>
 <% end %>
+</ul>
+<%= link_to "Create new Task", tasks_new_path %>
+
+	
+
+
+
+
 
 
